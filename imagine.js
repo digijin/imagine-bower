@@ -63,7 +63,7 @@ Imagine = (function() {
     return Imagine.process(params);
   }
 
-  Imagine.prototype.objects = [];
+  Imagine.objects = [];
 
   Imagine.process = function(params) {
     var el, i, out;
@@ -393,7 +393,6 @@ Imagine.InputAbstract = (function() {
   InputAbstract.prototype.keyChanged = {};
 
   function InputAbstract() {
-    console.log("initing");
     Imagine.addEvent(document, "keypress", function(e) {
       var keyCode;
       e = e || window.event;
