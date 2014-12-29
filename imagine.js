@@ -143,6 +143,10 @@ Imagine = (function() {
   return Imagine;
 
 })();
+
+if (typeof module !== "undefined" && module !== null) {
+  module.exports = Imagine;
+}
 ;
 Imagine.component = {};
 ;
@@ -630,7 +634,7 @@ Imagine.FPS = (function() {
   FPS.prototype.update = function() {
     var fps, reading, _i, _len, _ref;
     this.lastFPS.push(1 / Imagine.time.deltaTime);
-    if (this.lastFPS.length > 10) {
+    if (this.lastFPS.length > 50) {
       fps = 0;
       _ref = this.lastFPS;
       for (_i = 0, _len = _ref.length; _i < _len; _i++) {
